@@ -13,21 +13,11 @@ import {
 function FileUploader() {
   const onDrop = useCallback((acceptedFiles: File[]) => {
     // do something with the files
-    const file = acceptedFiles[0];
-    if (file) {
-      // await handleUpload(file);
-    }else{
-      // do nothing
-    }
+    console.log(acceptedFiles);
   }, []);
-
   const { getRootProps, getInputProps, isDragAccept, isFocused, isDragActive } =
     useDropzone({
       onDrop,
-      maxFiles: 1,
-      accept: {
-        "applocation/pdf": [".pdf"],
-      },
     });
   return (
     <div className="flex flex-col gap-4 items-center max-w-7xl mx-auto">
